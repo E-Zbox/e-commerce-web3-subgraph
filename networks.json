@@ -3,6 +3,9 @@
     "UserRegistry": {
       "address": "0x797a099778291689be23EDA3A1f6A5FA941a1D4b",
       "startBlock": 4770667
+    },
+    "ECommerce": {
+      "address": "0xE8Ab08AA477D82ee5F7bf90268983F56A99555dd"
     }
   }
 }
