@@ -22,3 +22,32 @@ dataSources:
         - event: UserAuthorized(indexed address,uint8)
           handler: handleUserAuthorized
       file: ./src/user-registry.ts
+  - kind: ethereum
+    name: ECommerce
+    network: sepolia
+    source:
+      address: "0xE8Ab08AA477D82ee5F7bf90268983F56A99555dd"
+      abi: ECommerce
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ProductCreated
+        - ProductDeleted
+        - ProductPurchased
+        - ProductUpdated
+      abis:
+        - name: ECommerce
+          file: ./abis/ECommerce.json
+      eventHandlers:
+        - event: ProductCreated(indexed uint256,string,address)
+          handler: handleProductCreated
+        - event: ProductDeleted(indexed uint256)
+          handler: handleProductDeleted
+        - event: ProductPurchased(indexed uint256,indexed address)
+          handler: handleProductPurchased
+        - event: ProductUpdated(indexed uint256,string)
+          handler: handleProductUpdated
+      file: ./src/e-commerce.ts
