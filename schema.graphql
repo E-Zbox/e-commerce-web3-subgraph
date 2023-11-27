@@ -6,3 +6,38 @@ type UserAuthorized @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+type ProductCreated @entity(immutable: true) {
+  id: Bytes!
+  ECommerce_id: BigInt! # uint256
+  name: String! # string
+  merchant: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ProductDeleted @entity(immutable: true) {
+  id: Bytes!
+  ECommerce_id: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ProductPurchased @entity(immutable: true) {
+  id: Bytes!
+  ECommerce_id: BigInt! # uint256
+  buyer: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ProductUpdated @entity(immutable: true) {
+  id: Bytes!
+  ECommerce_id: BigInt! # uint256
+  newName: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
